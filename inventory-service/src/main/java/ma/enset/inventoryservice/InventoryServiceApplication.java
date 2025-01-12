@@ -20,11 +20,11 @@ public class InventoryServiceApplication {
     CommandLineRunner commandLineRunner(ProductRepository productRepository) {
         return args -> {
             productRepository.save(
-                    Product.builder().id(UUID.randomUUID().toString()).name("Computer").price(10000).quantity(60).build());
+                    Product.builder().id("P01").name("Computer").price(10000).quantity(60).build());
             productRepository.save(
-                    Product.builder().id(UUID.randomUUID().toString()).name("Printer").price(2000).quantity(30).build());
+                    Product.builder().id("P02").name("Printer").price(2000).quantity(30).build());
             productRepository.save(
-                    Product.builder().id(UUID.randomUUID().toString()).name("Smartphone").price(5000).quantity(20).build());
+                    Product.builder().id("P03").name("Smartphone").price(5000).quantity(20).build());
 
             productRepository.findAll().forEach(System.out::println);
         };
